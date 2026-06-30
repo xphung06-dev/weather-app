@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.container.day {
+  background: linear-gradient(135deg, #2980b9, #6dd5fa, #ffffff);
+}
+
+.container.sunset {
+  background: linear-gradient(135deg, #ff9a56, #ff6b6b, #c44569);
+}
+
+.container.night {
+  background: linear-gradient(135deg, #000000, #0d1b2a, #1b263b);
+}
+
+.container.sunrise {
+  background: linear-gradient(135deg, #6a3093, #a044ff, #ff8c69);
+}
+
+.weather_container {
+  color: white;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.temp {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.temp .fa-solid {
+  color: orangered;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+.time_location {
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
+}
+
+.condition {
+  margin: 0.5rem;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.condition span {
+  display: block;
+  font-size: clamp(1rem, 2.4vh, 1.3rem);
+}
+
+.condition .weather_icon {
+  max-width: 80px;
+  width: 100%;
+  height: auto;
+}
+
+nav {
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+nav form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search_area {
+  padding: 0.8rem 0;
+  margin-left: 0;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  color: white;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.search_button {
+  padding: 0.8rem 2rem;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  border-radius: 0.9rem;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  width: 60%;
+  max-width: 220px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.search_button:hover {
+  transform: scale(0.98);
+  background-color: rgb(29, 224, 159);
+}
+
+.error {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error i {
+  color: red;
+  font-size: clamp(18px, 5vw, 22px);
+  margin-top: 0.5rem;
+}
+
+.error h2 {
+  font-size: clamp(22px, 6vw, 30px);
+}
+
+/*  Tablet trở lên: weather + search nằm ngang */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .weather_container {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .temp {
+    justify-content: flex-start;
+  }
+
+  .condition {
+    align-items: flex-start;
+    margin-left: 0;
+  }
+
+  nav form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search_area {
+    width: 100%;
+    text-align: left;
+  }
+
+  .search_button {
+    width: 100%;
+    align-self: flex-start;
+  }
+}
